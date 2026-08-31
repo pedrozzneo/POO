@@ -42,6 +42,12 @@ public class Email {
             return false;
         }
 
+        int atCharIndex = email.indexOf('@');
+        String charsBeforeAt = email.substring(0, atCharIndex).trim();
+        if(charsBeforeAt.length() == 0){
+            return false;
+        }
+
 
 
         return true;
