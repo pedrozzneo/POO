@@ -32,6 +32,16 @@ public class Email {
             return false;
         }
 
+        int atCharCount = 0;
+        for(char c : email.toCharArray()){
+            if(c == '@'){
+                atCharCount++;
+            }
+        }
+        if(atCharCount != 1){
+            return false;
+        }
+
 
 
         return true;
