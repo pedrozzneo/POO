@@ -25,28 +25,42 @@ package aula04.ex1;
 */
 
 public class Email {
-   public static boolean isValid(String email){
+    public static boolean condition1(String email){
         if(email == null || email.trim().equals("")){
             return false;
         }
+        return true;
+    }
 
+    public static boolean condition2and3(String email){
         int atCharCount = 0;
+
         for(char c : email.toCharArray()){
             if(c == '@'){
                 atCharCount++;
             }
         }
+
         if(atCharCount != 1){
             return false;
         }
+        return true;
+    }
 
+    public static boolean condition4(String email){
         int atCharIndex = email.indexOf('@');
         String charsBeforeAt = email.substring(0, atCharIndex).trim();
+
         if(charsBeforeAt.length() == 0){
             return false;
         }
+        return true;
+    }
 
-
+   public static boolean isValid(String email){
+        if(!condition1(email)) return false;
+        if(!condition2and3(email)) return false;
+        if(!condition4(email)) return false;
 
         return true;
    }
