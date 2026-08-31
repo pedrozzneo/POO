@@ -57,10 +57,21 @@ public class Email {
         return true;
     }
 
+    public static boolean condition5(String email){
+        int atCharIndex = email.indexOf('@');
+        String charsAfterAt = email.substring(atCharIndex, email.length()-1).trim();
+
+        if(charsAfterAt.length() == 0){
+            return false;
+        }
+        return true;
+    }
+
    public static boolean isValid(String email){
         if(!condition1(email)) return false;
         if(!condition2and3(email)) return false;
         if(!condition4(email)) return false;
+        if(!condition5(email)) return false;
 
         return true;
    }
