@@ -28,6 +28,12 @@ public class Email {
     public Email(){}
 
    public static boolean isValid(String email){
-       return true;
+        if(email == null || email.trim().equals("")){
+            return false;
+        }
+
+
+
+        return true;
    }
 }
