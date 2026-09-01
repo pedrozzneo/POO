@@ -169,7 +169,6 @@ public class Email {
         if(!condition10and11(email)) return false;
         if(!condition12(email)) return false;
         if(!condition13(email)) return false;
-
         return true;
    }
 }
