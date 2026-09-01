@@ -3,7 +3,7 @@ package aula04.exI;
 public class NamingConventions {
     public static boolean validConstant(String string, Convention convention){
         String charsAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String simbolsAllowed = "_";
+        String simbolsAllowed = "_$";
         String numbersAllowed = "0123456789";
         String allAllowed = charsAllowed + simbolsAllowed + numbersAllowed;
 
