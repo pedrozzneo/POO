@@ -59,7 +59,7 @@ public class Email {
 
     public static boolean condition5(String email){
         int atCharIndex = email.indexOf('@');
-        String charsAfterAt = email.substring(atCharIndex, email.length()-1).trim();
+        String charsAfterAt = email.substring(atCharIndex + 1).trim();
 
         if(charsAfterAt.length() == 0){
             return false;
