@@ -106,6 +106,13 @@ public class Email {
         return true;
     }
 
+    public static boolean condition9(String email) {
+        if(email.indexOf(' ') == -1){
+            return true;
+        }
+        return false;
+    }
+
    public static boolean isValid(String email){
         if(!condition1(email)) return false;
         if(!condition2and3(email)) return false;
@@ -114,6 +121,7 @@ public class Email {
         if(!condition6(email)) return false;
         if(!condition7(email)) return false;
         if(!condition8(email)) return false;
+        if(!condition9(email)) return false;
 
         return true;
    }
