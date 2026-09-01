@@ -124,6 +124,20 @@ public class Email {
         return true;
     }
 
+    public static boolean condition12(String email) {
+        int dotPosition = email.indexOf('.');
+        String charsAfterDotPosition = email.substring(dotPosition + 1);
+
+        while(charsAfterDotPosition.indexOf('.') != -1){
+            dotPosition = charsAfterDotPosition.indexOf('.');
+            if(dotPosition == 0){
+                return false;
+            }
+            charsAfterDotPosition = charsAfterDotPosition.substring(dotPosition + 1);
+        }
+        return true;
+    }
+
    public static boolean isValid(String email){
         if(!condition1(email)) return false;
         if(!condition2and3(email)) return false;
@@ -134,6 +148,7 @@ public class Email {
         if(!condition8(email)) return false;
         if(!condition9(email)) return false;
         if(!condition10and11(email)) return false;
+        if(!condition12(email)) return false;
 
         return true;
    }
