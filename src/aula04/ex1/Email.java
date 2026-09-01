@@ -113,6 +113,17 @@ public class Email {
         return false;
     }
 
+    public static boolean condition10and11(String email) {
+        char[] notAllowedChars = {'@', '.', '_', '-'};
+
+        for (char notAllowedChar : notAllowedChars) {
+            if(notAllowedChar == email.toCharArray()[0] || notAllowedChar == email.toCharArray()[email.length() -1]){
+                    return false;
+            }
+        }
+        return true;
+    }
+
    public static boolean isValid(String email){
         if(!condition1(email)) return false;
         if(!condition2and3(email)) return false;
@@ -122,6 +133,7 @@ public class Email {
         if(!condition7(email)) return false;
         if(!condition8(email)) return false;
         if(!condition9(email)) return false;
+        if(!condition10and11(email)) return false;
 
         return true;
    }
