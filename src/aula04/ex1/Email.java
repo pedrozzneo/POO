@@ -142,7 +142,7 @@ public class Email {
         String allowed = "abcdefghijklmnopqrstuvwxyz0123456789._-@";
         boolean noneEqual;
 
-        for (char c : email.toCharArray()) {
+        for (char c : email.toLowerCase().toCharArray()) {
             noneEqual = true;
 
             for (char c1 : allowed.toCharArray()) {
