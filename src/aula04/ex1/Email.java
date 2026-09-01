@@ -138,6 +138,25 @@ public class Email {
         return true;
     }
 
+    public static boolean condition13(String email) {
+        String allowed = "abcdefghijklmnopqrstuvwxyz0123456789._-@";
+        boolean noneEqual;
+
+        for (char c : email.toCharArray()) {
+            noneEqual = true;
+
+            for (char c1 : allowed.toCharArray()) {
+                if(c1 == c){
+                    noneEqual = false;
+                    break;
+                }
+            }
+
+            if(noneEqual) return false;
+        }
+        return true;
+    }
+
    public static boolean isValid(String email){
         if(!condition1(email)) return false;
         if(!condition2and3(email)) return false;
@@ -149,6 +168,7 @@ public class Email {
         if(!condition9(email)) return false;
         if(!condition10and11(email)) return false;
         if(!condition12(email)) return false;
+        if(!condition13(email)) return false;
 
         return true;
    }
