@@ -91,6 +91,21 @@ public class Email {
         return true;
     }
 
+    public static boolean condition8(String email) {
+        int lastDotCharIndex = email.indexOf('.');
+        String charsAfterLastDot = email.substring(lastDotCharIndex + 1);
+
+        while(charsAfterLastDot.indexOf('.') != -1){
+            lastDotCharIndex = charsAfterLastDot.indexOf('.');
+            charsAfterLastDot = charsAfterLastDot.substring(lastDotCharIndex + 1);
+        }
+
+        if(charsAfterLastDot.length() == 0){
+            return false;
+        }
+        return true;
+    }
+
    public static boolean isValid(String email){
         if(!condition1(email)) return false;
         if(!condition2and3(email)) return false;
@@ -98,6 +113,7 @@ public class Email {
         if(!condition5(email)) return false;
         if(!condition6(email)) return false;
         if(!condition7(email)) return false;
+        if(!condition8(email)) return false;
 
         return true;
    }
