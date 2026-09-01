@@ -59,9 +59,8 @@ public class Email {
 
     public static boolean condition5(String email){
         int atCharIndex = email.indexOf('@');
-        int dotCharIndex = email.indexOf('.');
 
-        String charsBetweenAtAndDot = email.substring(atCharIndex + 1, dotCharIndex);
+        String charsBetweenAtAndDot = email.substring(atCharIndex + 1);
 
         if(charsBetweenAtAndDot.length() == 0){
             return false;
@@ -82,10 +81,11 @@ public class Email {
 
     public static boolean condition7(String email){
         int atCharIndex = email.indexOf('@');
-        String charsAfterAt = email.substring(atCharIndex);
+        int dotCharIndex = email.indexOf('.');
 
-        int position = charsAfterAt.indexOf('.');
-        if(charsAfterAt.indexOf('.') == -1){
+        String charsBetweenAtAndDot = email.substring(atCharIndex + 1, dotCharIndex);
+
+        if(charsBetweenAtAndDot.length() == 0){
             return false;
         }
         return true;
