@@ -69,6 +69,15 @@ public class NamingConventions {
         return (string.toCharArray()[string.length()-1] == '_');
     }
 
+    public static boolean has2UnderscoresInARow(String string){
+        for (int i = 0; i < string.length() - 2; i++) {
+            if(string.toCharArray()[i] == '_' && string.toCharArray()[i+1] == '_'){
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static boolean charsAreUpperCaseOrDigitsOrUnderscore(String string){
         String charsAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789";
 
@@ -90,7 +99,7 @@ public class NamingConventions {
         if(!startWithUpperCaseLetter(string)) return false;
         if(!charsAreUpperCaseOrDigitsOrUnderscore(string)) return false;
         if(endWithUnderscore(string)) return false;
-
+        if(has2UnderscoresInARow(string)) return false;
 
         return true;
     }
