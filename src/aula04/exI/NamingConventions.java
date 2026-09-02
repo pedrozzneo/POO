@@ -65,6 +65,10 @@ public class NamingConventions {
         return count == 1;
     }
 
+    public static boolean endWithUnderscore(String string){
+        return (string.toCharArray()[string.length()-1] == '_');
+    }
+
     public static boolean charsAreUpperCaseOrDigitsOrUnderscore(String string){
         String charsAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789";
 
@@ -85,6 +89,7 @@ public class NamingConventions {
     public static boolean validConstant(String string, Convention convention){
         if(!startWithUpperCaseLetter(string)) return false;
         if(!charsAreUpperCaseOrDigitsOrUnderscore(string)) return false;
+        if(endWithUnderscore(string)) return false;
 
 
         return true;
