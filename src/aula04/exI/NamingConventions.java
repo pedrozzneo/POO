@@ -51,7 +51,23 @@ package aula04.exI;
      */
 
 public class NamingConventions {
+    public static boolean startWithUpperCaseLetter(String string){
+        String charsAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+        int count = 0;
+        for (char c : charsAllowed.toCharArray()) {
+            if(string.toCharArray()[0] == c){
+                count++;
+                break;
+            }
+        }
+
+        return count == 1;
+    }
+
     public static boolean validConstant(String string, Convention convention){
+        if(!startWithUpperCaseLetter(string)) return false;
+
         String charsAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String simbolsAllowed = "_$";
         String numbersAllowed = "0123456789";
