@@ -65,21 +65,28 @@ public class NamingConventions {
         return count == 1;
     }
 
-    public static boolean validConstant(String string, Convention convention){
-        if(!startWithUpperCaseLetter(string)) return false;
+    public static boolean charsAreUpperCaseOrDigitsOrUnderscore(String string){
+        String charsAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_0123456789";
 
-        String charsAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String simbolsAllowed = "_$";
-        String numbersAllowed = "0123456789";
-        String allAllowed = charsAllowed + simbolsAllowed + numbersAllowed;
-
+        boolean hasOneAllowedChar;
         for (char c : string.toCharArray()) {
-            for (char c1 : allAllowed.toCharArray()) {
-                if(c != c1){
-                    return false;
+            hasOneAllowedChar = false;
+            for (char c1 : charsAllowed.toCharArray()) {
+                if(c == c1){
+                    hasOneAllowedChar = true;
+                    break;
                 }
             }
+            if(!hasOneAllowedChar) return false;
         }
+        return true;
+    }
+
+    public static boolean validConstant(String string, Convention convention){
+        if(!startWithUpperCaseLetter(string)) return false;
+        if(!charsAreUpperCaseOrDigitsOrUnderscore(string)) return false;
+
+
         return true;
     }
 
