@@ -96,6 +96,7 @@ public class NamingConventions {
     }
 
     public static boolean validConstant(String string, Convention convention){
+        if(string.isEmpty()) return false;
         if(!startWithUpperCaseLetter(string)) return false;
         if(!charsAreUpperCaseOrDigitsOrUnderscore(string)) return false;
         if(endWithUnderscore(string)) return false;
