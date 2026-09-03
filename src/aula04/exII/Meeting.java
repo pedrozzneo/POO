@@ -17,6 +17,14 @@ public class Meeting {
         return description;
     }
 
+    public LocalTime getStartTime() {
+        return startTime;
+    }
+
+    public LocalTime getEndTime() {
+        return endTime;
+    }
+
     public String getStartTimeAsString(){
         return String.format("%d:%d", startTime.getHour(), startTime.getMinute());
     }
