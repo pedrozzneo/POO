@@ -12,4 +12,16 @@ public class Meeting {
         this.startTime = startTime;
         this.endTime = endTime;
     }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public String getStartTime(){
+        return String.format("%d:%d", startTime.getHour(), startTime.getMinute());
+    }
+
+    public String getEndTime(){
+        return String.format("%d:%d", endTime.getHour(), endTime.getMinute());
+    }
 }
