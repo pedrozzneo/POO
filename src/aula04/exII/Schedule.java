@@ -7,8 +7,8 @@ public class Schedule {
     private LocalDate day;
     private LocalTime startTime;
     private LocalTime endTime;
-    private static int maxMeetings = 10;
-    private static Meeting[] meetings = new Meeting[maxMeetings];
+    private int maxMeetings = 10;
+    private Meeting[] meetings = new Meeting[maxMeetings];
     private static int meetingsCount = 0;
 
     public Schedule(String day, String startTime, String endTime){
@@ -53,12 +53,31 @@ public class Schedule {
         }
     }
 
+    public String printMeetings(){
+        if(meetingsCount == 0) return "";
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = 0; i < meetingsCount; i++) {
+            stringBuilder.append
+                (meetings[i].getStartTime()).append
+                ("-").append
+                (meetings[i].getEndTime()).append
+                (": ").append
+                (meetings[i].getDescription()).append
+                ("\n");
+        }
+
+        return stringBuilder.toString();
+    }
     public String scheduleAsString(){
-        return String.format(
-                "%d/%d/%d from %d:%d to %d:%d",
+        String scheduleAsString = String.format(
+                "%d/%d/%d from %d:%d to %d:%d\n\nMeetings:\n",
                 day.getDayOfMonth(), day.getMonthValue(), day.getYear(),
                 startTime.getHour(), startTime.getMinute(),
                 endTime.getHour(), endTime.getMinute()
         );
+
+        scheduleAsString += printMeetings();
+        return scheduleAsString;
     }
 }
