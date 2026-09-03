@@ -17,11 +17,11 @@ public class Meeting {
         return description;
     }
 
-    public String getStartTime(){
+    public String getStartTimeAsString(){
         return String.format("%d:%d", startTime.getHour(), startTime.getMinute());
     }
 
-    public String getEndTime(){
+    public String getEndTimeAsString(){
         return String.format("%d:%d", endTime.getHour(), endTime.getMinute());
     }
 }
