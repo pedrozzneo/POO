@@ -7,6 +7,7 @@ public class Schedule {
     private LocalDate day;
     private LocalTime startTime;
     private LocalTime endTime;
+    private static Meeting[] meetings = new Meeting[10];
 
     public Schedule(String day, String startTime, String endTime){
         String[] partsOfDay = day.split("/");
