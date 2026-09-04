@@ -34,6 +34,16 @@ public class Schedule {
         this.endTime = endLocalTime;
     }
 
+    public boolean timeConflictsWithOtherMeetings(LocalTime startTime, LocalTime endTime){
+        for (int i = 0; i < meetingsCount; i++) {
+            if (startTime.isAfter(meetings[i].getEndTime()) || endTime.isBefore(meetings[i].getStartTime())){
+                continue;
+            }
+            return true;
+        }
+        return false;
+    }
+
     public void addMeeting(String description, String startTime, String endTime){
         String[] partsOfStartTime = startTime.split(":");
         int startHour = Integer.parseInt(partsOfStartTime[0]);
@@ -45,6 +55,8 @@ public class Schedule {
 
         LocalTime startLocalTime = LocalTime.of(startHour, startMinutes);
         LocalTime endLocalTime = LocalTime.of(endHour, endMinutes);
+
+        if(timeConflictsWithOtherMeetings(startLocalTime, endLocalTime)) return;
 
         if(meetingsCount < maxMeetings && startLocalTime.isAfter(this.startTime) && endLocalTime.isBefore(this.endTime)){
             Meeting meeting = new Meeting(description, startLocalTime, endLocalTime);
@@ -59,9 +71,9 @@ public class Schedule {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < meetingsCount; i++) {
             stringBuilder.append
-                (meetings[i].getStartTime()).append
+                (meetings[i].getStartTimeAsString()).append
                 ("-").append
-                (meetings[i].getEndTime()).append
+                (meetings[i].getEndTimeAsString()).append
                 (": ").append
                 (meetings[i].getDescription()).append
                 ("\n");
