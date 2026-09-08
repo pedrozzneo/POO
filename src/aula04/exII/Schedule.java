@@ -109,4 +109,19 @@ public class Schedule {
         scheduleAsString += printMeetings();
         return scheduleAsString;
     }
+
+    public double percentageSpentInMeetings(){
+        int startSecondsTotal = startTime.getSecond() + (startTime.getMinute()*60) + (startTime.getHour()*60*60);
+        int endSecondsTotal = endTime.getSecond() + (endTime.getMinute()*60) + (endTime.getHour()*60*60);
+
+        int durationSeconds = endSecondsTotal - startSecondsTotal;
+        long durationMinutes = (long) (durationSeconds/60);
+
+        long meetingsDuration = 0;
+        for (int i = 0; i < meetingsCount; i++) {
+            meetingsDuration += meetings[i].durationMinutes();
+        }
+
+        return (double) (meetingsDuration/durationMinutes);
+    }
 }
