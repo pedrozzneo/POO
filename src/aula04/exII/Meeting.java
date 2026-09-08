@@ -48,4 +48,14 @@ public class Meeting {
     public String getEndTimeAsString(){
         return String.format("%d:%d", endTime.getHour(), endTime.getMinute());
     }
+
+    public long durationMinutes(){
+        int startSecondsTotal = startTime.getSecond() + (startTime.getMinute()*60) + (startTime.getHour()*60*60);
+        int endSecondsTotal = endTime.getSecond() + (endTime.getMinute()*60) + (endTime.getHour()*60*60);
+
+        int durationSeconds = endSecondsTotal - startSecondsTotal;
+        long durationMinutes = (long) (durationSeconds/60);
+
+        return durationMinutes;
+    }
 }
