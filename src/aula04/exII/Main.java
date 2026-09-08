@@ -13,5 +13,7 @@ public class Main {
         schedule.addMeeting(meeting3);
 
         System.out.println(schedule.scheduleAsString());
+        schedule.removeMeeting(meeting2);
+        System.out.println(schedule.scheduleAsString());
     }
 }

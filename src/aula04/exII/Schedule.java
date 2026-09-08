@@ -77,6 +77,27 @@ public class Schedule {
 
         return stringBuilder.toString();
     }
+
+    public void moveMeetingsBackward(int index){
+        if(index == maxMeetings -1){
+            meetingsCount--;
+            return;
+        }
+
+        for (int i = index; i < meetingsCount -1; i++) {
+            meetings[i] = meetings[i + 1];
+        }
+        meetingsCount--;
+    }
+
+    public void removeMeeting(Meeting meeting){
+        for (int i = 0; i < meetingsCount; i++) {
+            if(meetings[i].equals(meeting)){
+                moveMeetingsBackward(i);
+            }
+        }
+    }
+
     public String scheduleAsString(){
         String scheduleAsString = String.format(
                 "%d/%d/%d from %d:%d to %d:%d\n\nMeetings:\n",
