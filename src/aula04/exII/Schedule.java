@@ -11,7 +11,7 @@ public class Schedule {
     private Meeting[] meetings = new Meeting[maxMeetings];
     private static int meetingsCount = 0;
 
-    public Schedule(String day, String startTime, String endTime){
+    public static Schedule create(String day, String startTime, String endTime){
         String[] partsOfDay = day.split("/");
         int year = Integer.parseInt(partsOfDay[0]);
         int month = Integer.parseInt(partsOfDay[1]);
@@ -25,13 +25,18 @@ public class Schedule {
         int endHour = Integer.parseInt(partsOfEndTime[0]);
         int endMinutes = Integer.parseInt(partsOfEndTime[1]);
 
-        LocalDate localDate = LocalDate.of(2026, 9, 2);
+        LocalDate localDateDay = LocalDate.of(2026, 9, 2);
         LocalTime startLocalTime = LocalTime.of(startHour, startMinutes);
         LocalTime endLocalTime = LocalTime.of(endHour, endMinutes);
 
-        this.day = localDate;
-        this.startTime = startLocalTime;
-        this.endTime = endLocalTime;
+        Schedule schedule = new Schedule(localDateDay, startLocalTime, endLocalTime);
+        return schedule;
+    }
+
+    private Schedule(LocalDate day, LocalTime startTime, LocalTime endTime){
+        this.day = day;
+        this.startTime = startTime;
+        this.endTime = endTime;
     }
 
     public boolean timeConflictsWithOtherMeetings(LocalTime startTime, LocalTime endTime){
