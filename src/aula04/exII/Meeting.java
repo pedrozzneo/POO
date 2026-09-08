@@ -7,10 +7,26 @@ public class Meeting {
     private LocalTime startTime;
     private LocalTime endTime;
 
-    public Meeting(String description, LocalTime startTime, LocalTime endTime){
+    private Meeting(String description, LocalTime startTime, LocalTime endTime){
         this.description = description;
         this.startTime = startTime;
         this.endTime = endTime;
+    }
+
+    public static Meeting create(String description, String startTime, String endTime){
+        String[] partsOfStartTime = startTime.split(":");
+        int startHour = Integer.parseInt(partsOfStartTime[0]);
+        int startMinutes = Integer.parseInt(partsOfStartTime[1]);
+
+        String[] partsOfEndTime = endTime.split(":");
+        int endHour = Integer.parseInt(partsOfEndTime[0]);
+        int endMinutes = Integer.parseInt(partsOfEndTime[1]);
+
+        LocalTime startLocalTime = LocalTime.of(startHour, startMinutes);
+        LocalTime endLocalTime = LocalTime.of(endHour, endMinutes);
+
+        Meeting meeting = new Meeting(description, startLocalTime, endLocalTime);
+        return meeting;
     }
 
     public String getDescription(){
