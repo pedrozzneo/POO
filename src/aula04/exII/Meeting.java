@@ -1,6 +1,8 @@
 package aula04.exII;
 
+import java.time.Duration;
 import java.time.LocalTime;
+import java.time.Period;
 
 public class Meeting {
     private String description;
@@ -24,6 +26,7 @@ public class Meeting {
 
         LocalTime startLocalTime = LocalTime.of(startHour, startMinutes);
         LocalTime endLocalTime = LocalTime.of(endHour, endMinutes);
+
 
         Meeting meeting = new Meeting(description, startLocalTime, endLocalTime);
         return meeting;
@@ -55,6 +58,8 @@ public class Meeting {
 
         int durationSeconds = endSecondsTotal - startSecondsTotal;
         long durationMinutes = (long) (durationSeconds/60);
+
+        Duration.between(startTime, endTime).toMinutes();
 
         return durationMinutes;
     }

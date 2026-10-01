@@ -100,17 +100,11 @@ public class Email {
             charsAfterLastDot = charsAfterLastDot.substring(lastDotCharIndex + 1);
         }
 
-        if(charsAfterLastDot.length() == 0){
-            return false;
-        }
-        return true;
+        return !(charsAfterLastDot.isEmpty());
     }
 
     public static boolean condition9(String email) {
-        if(email.indexOf(' ') == -1){
-            return true;
-        }
-        return false;
+        return email.indexOf(' ') == -1;
     }
 
     public static boolean condition10and11(String email) {
