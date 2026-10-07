@@ -1,4 +1,4 @@
-package aula05.interfaces;
+package aula06.exSlide47.interfaces;
 
 public interface Runnable {
     void run();

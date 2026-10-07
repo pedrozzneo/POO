@@ -1,5 +1,5 @@
-package aula05.models.Animals;
-import aula05.interfaces.Runnable;
+package aula06.exSlide47.models.Animals;
+import aula06.exSlide47.interfaces.Runnable;
 
 public class Wolf extends Animal implements Runnable {
     @Override

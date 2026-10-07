@@ -1,9 +1,9 @@
-package aula05;
+package aula06.exSlide47;
 
-import aula05.models.Animals.Lion;
-import aula05.models.Animals.Owl;
-import aula05.models.Animals.Wolf;
-import aula05.models.Zoo;
+import aula06.exSlide47.models.Animals.Lion;
+import aula06.exSlide47.models.Animals.Owl;
+import aula06.exSlide47.models.Animals.Wolf;
+import aula06.exSlide47.models.Zoo;
 
 public class Main {
 

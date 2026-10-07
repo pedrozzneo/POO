@@ -1,4 +1,4 @@
-package aula05.models.Animals;
+package aula06.exSlide47.models.Animals;
 
 public abstract class Animal {
     private String name;
