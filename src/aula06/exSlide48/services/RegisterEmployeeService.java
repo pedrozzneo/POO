@@ -7,16 +7,15 @@ import aula06.exSlide48.models.FakeEmployeeRepository;
 public class RegisterEmployeeService {
     public Repository<Employee> repository;
 
-    RegisterEmployeeService(Repository<Employee> repository){
+    public RegisterEmployeeService(Repository<Employee> repository){
         this.repository = repository;
     }
 
-    void register(Employee employee){
+    public void register(Employee employee){
         FindEmployeeService findEmployeeService = new FindEmployeeService(repository);
 
-        if(!findEmployeeService.employeeInRepository(employee)) return;
+        if(findEmployeeService.findById(employee.getId()) != null) return;
 
-        FakeEmployeeRepository fakeEmployeeRepository = new FakeEmployeeRepository();
-        fakeEmployeeRepository.save(employee);
+        repository.save(employee);
     }
 }

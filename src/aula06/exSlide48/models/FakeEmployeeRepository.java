@@ -17,7 +17,7 @@ public class FakeEmployeeRepository implements Repository<Employee>{
     @Override
     public Employee getById(String id) {
         for (int i = 0; i < counter; i++) {
-            if (Objects.equals(employees[i].getId(), id)) {
+            if ((employees[i].getId()).equals(id)) {
                 return employees[i];
             }
         }

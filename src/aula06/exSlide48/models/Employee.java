@@ -17,6 +17,10 @@ public class Employee {
         this.dateOfEmployment = dateOfEmployment;
     }
 
+    public Employee(String id) {
+        this.id = id;
+    }
+
     public String getId() {
         return id;
     }
