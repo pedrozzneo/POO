@@ -16,4 +16,8 @@ public class Employee {
         this.salary = salary;
         this.dateOfEmployment = dateOfEmployment;
     }
+
+    public String getId() {
+        return id;
+    }
 }

@@ -1,6 +1,6 @@
 package aula06.exSlide48.interfaces;
 
-public interface Repository {
-    public <T> void save(T object);
-    public <T> T getById(String id);
+public interface Repository<T> {
+    void save(T object);
+    <Employee> T getById(String id);
 }
