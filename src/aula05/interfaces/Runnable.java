@@ -1,5 +1,5 @@
 package aula05.interfaces;
 
-public interface runnable {
+public interface Runnable {
     void run();
 }

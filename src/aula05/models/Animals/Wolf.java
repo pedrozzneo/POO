@@ -1,7 +1,7 @@
 package aula05.models.Animals;
-import aula05.interfaces.runnable;
+import aula05.interfaces.Runnable;
 
-public class Wolf extends Animal implements runnable{
+public class Wolf extends Animal implements Runnable {
     @Override
     public void makeSound() {
         System.out.println("Auuuuuu!");
