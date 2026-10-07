@@ -6,17 +6,19 @@ import java.util.Objects;
 
 public class FakeEmployeeRepository implements Repository<Employee>{
     Employee[] employees = new Employee[100];
+    int counter;
 
     @Override
     public void save(Employee employee) {
-        employees[employees.length - 1] = employee;
+        employees[counter] = employee;
+        counter++;
     }
 
     @Override
     public Employee getById(String id) {
-        for (Employee employee : employees) {
-            if (Objects.equals(employee.getId(), id)) {
-                return employee;
+        for (int i = 0; i < counter; i++) {
+            if (Objects.equals(employees[i].getId(), id)) {
+                return employees[i];
             }
         }
         return null;
