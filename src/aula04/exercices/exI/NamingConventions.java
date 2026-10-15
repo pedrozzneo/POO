@@ -1,4 +1,4 @@
-package aula04.exI;
+package aula04.exercices.ex1.exI;
 
 /*
     I sent this prompt below to the AI:

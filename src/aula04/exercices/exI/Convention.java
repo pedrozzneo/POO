@@ -1,4 +1,4 @@
-package aula04.exI;
+package aula04.exercices.ex1.exI;
 
 public enum Convention {
         VARIABLE,

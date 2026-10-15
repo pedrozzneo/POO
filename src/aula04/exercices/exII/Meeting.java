@@ -1,8 +1,7 @@
-package aula04.exII;
+package aula04.exercices.ex1.exII;
 
 import java.time.Duration;
 import java.time.LocalTime;
-import java.time.Period;
 
 public class Meeting {
     private String description;
