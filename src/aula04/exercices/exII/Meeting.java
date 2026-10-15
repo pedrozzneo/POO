@@ -1,4 +1,4 @@
-package aula04.exercices.ex1.exII;
+package aula04.exercices.exII;
 
 import java.time.Duration;
 import java.time.LocalTime;

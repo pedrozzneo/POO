@@ -1,4 +1,4 @@
-package aula04.ex1;
+package aula04.exercices.ex1;
 
 /*
     I SENT THE SLIDES OF THIS CLASS TO THE AI AND THIS PROMPT BELOW:

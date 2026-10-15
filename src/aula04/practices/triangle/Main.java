@@ -1,4 +1,4 @@
-package aula04.triangle;
+package aula04.practices.triangle;
 
 public class Main {
     static void main() {

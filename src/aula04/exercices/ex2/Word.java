@@ -1,4 +1,4 @@
-package aula04.exercices.ex1.ex2;
+package aula04.exercices.ex2;
 
 public class Word {
     public static int repetitionsInString(String string, String word){

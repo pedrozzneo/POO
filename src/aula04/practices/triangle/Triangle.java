@@ -1,4 +1,4 @@
-package aula04.triangle;
+package aula04.practices.triangle;
 
 // idea of mine just to test my knowledge with fabric static methods
 

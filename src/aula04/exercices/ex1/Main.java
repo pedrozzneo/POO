@@ -1,4 +1,4 @@
-package aula04.ex1;
+package aula04.exercices.ex1;
 
 public class Main {
     static void main(){
