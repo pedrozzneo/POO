@@ -20,6 +20,6 @@ public class Main {
 
         int a = integer; // autoboxing back into int
         int b = integer.intValue(); // same but explicit
-        String numberInString = Integer.toString(10)
+        String numberInString = Integer.toString(10);
     }
 }
