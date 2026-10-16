@@ -5,14 +5,31 @@ import java.time.LocalDate;
 public class Post {
     private String quote;
     private LocalDate date;
-    private UserAccount user;
+    private UserAccount userAccount;
     private int claps;
     private int boos;
 
     Post(UserAccount userAccount, String quote){
         this.date = LocalDate.now();
         this.quote = quote;
-        this.user = user;
+        this.userAccount = userAccount;
+    }
+
+    public void show(){
+        System.out.printf(" [%s] %s says \"%s\" | Claps: %d | Boos: %d.%n"
+                , date.toString(),
+                userAccount.getUserName(),
+                quote,
+                claps,
+                boos);
+    }
+
+    public void clap(){
+        claps++;
+    }
+
+    public void boo(){
+        boos++;
     }
 
     public String getQuote() {
@@ -24,7 +41,7 @@ public class Post {
     }
 
     public UserAccount getUser() {
-        return user;
+        return userAccount;
     }
 
     public int getClaps() {
@@ -44,14 +61,6 @@ public class Post {
     }
 
     public void setUser(UserAccount user) {
-        this.user = user;
-    }
-
-    public void setClaps(int claps) {
-        this.claps = claps;
-    }
-
-    public void setBoos(int boos) {
-        this.boos = boos;
+        this.userAccount = user;
     }
 }
