@@ -14,4 +14,44 @@ public class Post {
         this.quote = quote;
         this.user = user;
     }
+
+    public String getQuote() {
+        return quote;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public UserAccount getUser() {
+        return user;
+    }
+
+    public int getClaps() {
+        return claps;
+    }
+
+    public int getBoos() {
+        return boos;
+    }
+
+    public void setQuote(String quote) {
+        this.quote = quote;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public void setUser(UserAccount user) {
+        this.user = user;
+    }
+
+    public void setClaps(int claps) {
+        this.claps = claps;
+    }
+
+    public void setBoos(int boos) {
+        this.boos = boos;
+    }
 }
