@@ -1,6 +1,6 @@
-package aula05.slide7;
+package aula05.practices;
 
-public sealed class Manager extends Employee permits Test{
+public sealed class Manager extends Employee permits Test {
     private Employee[] managedEmployees = new Employee[10];
 
     Manager(String name, double salary){

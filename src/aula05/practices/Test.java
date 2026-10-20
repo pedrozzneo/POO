@@ -1,4 +1,4 @@
-package aula05.slide7;
+package aula05.practices;
 
 public final class Test extends Manager {
     Test(String name, double salary) {
