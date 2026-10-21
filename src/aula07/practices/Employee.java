@@ -18,7 +18,21 @@ public class Employee {
         return salary;
     }
 
+    public static double getAverageSalary(double... salary){
+        double sum = 0;
+        for (double v : salary) {
+            sum += v;
+        }
+        return sum/salary.length;
+    }
+
     public String getName() {
         return name;
+    }
+
+    static void main() {
+        System.out.println(Employee.getAverageSalary(1000, 2000));
+        System.out.println(Employee.getAverageSalary(1000, 2000, 3000));
+        System.out.println(Employee.getAverageSalary(1000, 2000, 3000, 7000));
     }
 }
