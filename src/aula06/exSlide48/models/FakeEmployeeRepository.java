@@ -2,8 +2,6 @@ package aula06.exSlide48.models;
 
 import aula06.exSlide48.interfaces.Repository;
 
-import java.util.Objects;
-
 public class FakeEmployeeRepository implements Repository<Employee>{
     Employee[] employees = new Employee[100];
     int counter;

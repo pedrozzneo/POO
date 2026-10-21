@@ -1,7 +1,7 @@
-package aula06.exSlide47.models;
+package aula06.exercices.exSlide47.models;
 
-import aula06.exSlide47.interfaces.Runnable;
-import aula06.exSlide47.models.Animals.Animal;
+import aula06.exercices.exSlide47.interfaces.Runnable;
+import aula06.exercices.exSlide47.models.Animals.Animal;
 
 public class Zoo {
     Animal[] animals = new Animal[10];

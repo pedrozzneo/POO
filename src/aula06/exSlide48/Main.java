@@ -1,6 +1,5 @@
 package aula06.exSlide48;
 
-import aula06.exSlide48.interfaces.Repository;
 import aula06.exSlide48.models.Employee;
 import aula06.exSlide48.models.FakeEmployeeRepository;
 import aula06.exSlide48.services.FindEmployeeService;

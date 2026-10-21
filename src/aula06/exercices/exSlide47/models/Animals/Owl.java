@@ -1,4 +1,4 @@
-package aula06.exSlide47.models.Animals;
+package aula06.exercices.exSlide47.models.Animals;
 
 public class Owl extends Animal {
     @Override
