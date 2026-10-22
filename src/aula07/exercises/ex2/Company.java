@@ -1,26 +1,20 @@
 package aula07.exercises.ex2;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.time.LocalDate;
+import java.util.*;
 
 public class Company {
-    private final Set<Employee> employees;
+    private final Map<String, Employee> employees;
 
     public Company(){
-        employees = new HashSet<>();
+        employees = new HashMap<>();
     }
 
-    public void hire(String name, String cpf, double salary){
-        Employee employee = new Employee(name, cpf, salary);
-        employees.add(employee);
+    public void hire(Employee employee){
+        employees.put(employee.getId(), employee);
     }
 
-    public void fire(String cpf){
-
-        employees.remove(cpf);
+    public void fire(String id){
+        employees.remove(id);
     }
-
-
 }

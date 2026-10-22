@@ -1,6 +1,8 @@
 package aula07.exercises.ex2;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Employee {
@@ -9,6 +11,7 @@ public class Employee {
     private String jobTitle;
     private Double salary;
     private LocalDate dateOfEmployment;
+    private List<Paycheck> paychecks;
 
     public Employee(String id, String name, String jobTitle, Double salary, LocalDate dateOfEmployment) {
         this.id = id;
@@ -16,6 +19,7 @@ public class Employee {
         this.jobTitle = jobTitle;
         this.salary = salary;
         this.dateOfEmployment = dateOfEmployment;
+        paychecks = new ArrayList<>();
     }
 
     public String getId() {
