@@ -46,4 +46,9 @@ public class Employee {
     public int hashCode() {
         return Objects.hashCode(id);
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %s: %.2f", getName(), getJobTitle(), getSalary());
+    }
 }

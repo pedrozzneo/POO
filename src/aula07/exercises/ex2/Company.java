@@ -17,4 +17,8 @@ public class Company {
     public void fire(String id){
         employees.remove(id);
     }
+
+    public Employee[] getEmployees(){
+        return employees.values().toArray(new Employee[0]);
+    }
 }
