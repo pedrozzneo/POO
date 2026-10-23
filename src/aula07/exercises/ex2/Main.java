@@ -15,7 +15,11 @@ public class Main {
         for (Employee employee1 : employees) {
             System.out.println(employee1);
         }
-        company.fire(employee.getId());
-        company.fire(employee2.getId());
+//        company.fire(employee.getId());
+//        company.fire(employee2.getId());
+
+        Employee[] employees1 = company.getEmployees();
+        Employee[] employees2 = company.getEmployees("developer");
+        Employee[] employees3 = company.getEmployees("Software developer");
     }
 }

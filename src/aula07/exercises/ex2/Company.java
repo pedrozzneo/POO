@@ -21,4 +21,17 @@ public class Company {
     public Employee[] getEmployees(){
         return employees.values().toArray(new Employee[0]);
     }
+
+    public Employee[] getEmployees(String jobTitle){
+        Employee[] employeesArray = employees.values().toArray(new Employee[0]);
+        List<Employee> employeeList = new ArrayList<>();
+
+        for (Employee employee : employeesArray) {
+            if(Objects.equals(employee.getJobTitle(), jobTitle)){
+                employeeList.add(employee);
+            }
+        }
+
+        return employeeList.toArray(new Employee[0]);
+    }
 }
