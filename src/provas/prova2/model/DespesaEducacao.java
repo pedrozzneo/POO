@@ -1,0 +1,19 @@
+package provas.prova2.model;
+
+public class DespesaEducacao extends Despesa{
+    private final double DEDUCAO_MAX = 2000;
+    private final String nomeInstituicao;
+
+    public DespesaEducacao(int id, String descricao, double valor, String cnpj, String nomeInstituicao) {
+        super(id, descricao, valor, cnpj);
+        this.nomeInstituicao = nomeInstituicao;
+    }
+
+    public double getDEDUCAO_MAX() {
+        return DEDUCAO_MAX;
+    }
+
+    public String getNomeInstituicao() {
+        return nomeInstituicao;
+    }
+}
