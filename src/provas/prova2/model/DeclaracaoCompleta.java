@@ -3,7 +3,7 @@ package provas.prova2.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DeclaracaoCompleta extends Declaracao{
+public final class DeclaracaoCompleta extends Declaracao{
     private final List<Despesa> despesas = new ArrayList<>();
 
     public DeclaracaoCompleta(int id, double ganhoTributavel, double valorJaPago){

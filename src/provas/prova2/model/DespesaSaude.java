@@ -1,6 +1,6 @@
 package provas.prova2.model;
 
-public class DespesaSaude extends Despesa{
+public final class DespesaSaude extends Despesa{
     private final double DEDUCAO_MAX = 1500;
     private final String registroConselho;
 
