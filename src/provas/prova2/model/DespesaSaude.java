@@ -9,7 +9,7 @@ public final class DespesaSaude extends Despesa{
         this.registroConselho = registroConselho;
     }
 
-    public double getDEDUCAO_MAX() {
+    public static double getDEDUCAO_MAX() {
         return DEDUCAO_MAX;
     }
 

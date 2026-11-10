@@ -9,7 +9,7 @@ public final class DespesaEducacao extends Despesa{
         this.nomeInstituicao = nomeInstituicao;
     }
 
-    public double getDEDUCAO_MAX() {
+    public static double getDEDUCAO_MAX() {
         return DEDUCAO_MAX;
     }
 
