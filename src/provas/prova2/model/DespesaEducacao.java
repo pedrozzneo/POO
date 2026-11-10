@@ -1,7 +1,7 @@
 package provas.prova2.model;
 
 public final class DespesaEducacao extends Despesa{
-    private final double DEDUCAO_MAX = 2000;
+    private static final double DEDUCAO_MAX = 2000;
     private final String nomeInstituicao;
 
     public DespesaEducacao(int id, String descricao, double valor, String cnpj, String nomeInstituicao) {
