@@ -20,28 +20,27 @@ public final class DeclaracaoCompleta extends Declaracao{
         if(tributavelCopy > 55976.16){
             valorFaixa = (tributavelCopy - 55976.16) * 0.275;
             imposto += valorFaixa;
-            tributavelCopy -= valorFaixa;
+            tributavelCopy = 55976.16;
         }
 
         if(tributavelCopy > 45012.73){
-            valorEntre = 55976.16 - tributavelCopy;
+            valorEntre = tributavelCopy - 45012.73;
             valorFaixa = valorEntre * 0.225;
             imposto += valorFaixa;
-            tributavelCopy -= valorFaixa;
+            tributavelCopy = 45012.72;
         }
 
         if(tributavelCopy > 33919.93){
-            valorEntre = 45012.73 - tributavelCopy;
+            valorEntre = tributavelCopy - 33919.93;
             valorFaixa = valorEntre * 0.15;
             imposto += valorFaixa;
-            tributavelCopy -= valorFaixa;
+            tributavelCopy = 33919.92;
         }
 
         if(tributavelCopy > 22847.88){
-            valorEntre = 33919.93 - tributavelCopy;
+            valorEntre = tributavelCopy - 22847.88;
             valorFaixa = valorEntre * 0.075;
             imposto += valorFaixa;
-            tributavelCopy -= valorFaixa;
         }
 
         return imposto;

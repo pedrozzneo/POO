@@ -5,7 +5,7 @@ import provas.prova2.model.*;
 public class Main {
     static void main(){
         // Cria Declaracoes
-        DeclaracaoCompleta declaracaoCompleta = new DeclaracaoCompleta(1, 2000, 1000);
+        DeclaracaoCompleta declaracaoCompleta = new DeclaracaoCompleta(1, 55976.17, 1000);
         DeclaracaoSimplificada declaracaoSimplificada = new DeclaracaoSimplificada(1, 1500, 3000);
 
         // Cria despesas
@@ -26,6 +26,8 @@ public class Main {
 
         // Verifica o valor das dedutíveis (apenas debugando)
         declaracaoCompleta.incluirDespesasDedutiveis();
+
+        declaracaoCompleta.valorImposto();
 
         // Remove despesas
         declaracaoCompleta.removerDespesa(despesaEducacao);
