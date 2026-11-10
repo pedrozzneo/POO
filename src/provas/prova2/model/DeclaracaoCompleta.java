@@ -23,7 +23,7 @@ public final class DeclaracaoCompleta extends Declaracao{
         despesas.remove(despesa);
     }
 
-    public double totalDespesasDedutiveis(){
+    public void incluirDespesasDedutiveis(){
        Despesa[] despesasArray = new Despesa[despesas.size()];
        despesasArray = despesas.toArray(despesasArray);
 
@@ -53,6 +53,6 @@ public final class DeclaracaoCompleta extends Declaracao{
             saudeSum = saudeMax;
         }
 
-        return educacaoSum + saudeSum;
+        this.setValorJaPago(this.getValorJaPago() + educacaoSum + saudeSum);
     }
 }

@@ -24,10 +24,8 @@ public class Main {
         declaracaoCompleta.adicionarDespesa(despesaSaude2);
         declaracaoCompleta.adicionarDespesa(despesaSaude3);
 
-        // Verifica o valor das dedutíveis
-        double gastosDedutiveis = declaracaoCompleta.totalDespesasDedutiveis();
-        System.out.println("gastosDedutiveis = " + gastosDedutiveis);
-        
+        // Verifica o valor das dedutíveis (apenas debugando)
+        declaracaoCompleta.incluirDespesasDedutiveis();
 
         // Remove despesas
         declaracaoCompleta.removerDespesa(despesaEducacao);
