@@ -22,4 +22,37 @@ public final class DeclaracaoCompleta extends Declaracao{
     public void removerDespesa(Despesa despesa){
         despesas.remove(despesa);
     }
+
+    public double totalDespesasDedutiveis(){
+       Despesa[] despesasArray = new Despesa[despesas.size()];
+       despesasArray = despesas.toArray(despesasArray);
+
+       double educacaoSum = 0;
+       double educacaoMax = DespesaEducacao.getDEDUCAO_MAX();
+
+       double saudeSum = 0;
+       double saudeMax = DespesaSaude.getDEDUCAO_MAX();
+
+        for (Despesa despesa : despesasArray) {
+            if(despesa instanceof DespesaEducacao){
+                educacaoSum += despesa.getValor();
+            }
+        }
+
+        for (Despesa despesa : despesasArray) {
+            if(despesa instanceof DespesaSaude){
+                saudeSum += despesa.getValor();
+            }
+        }
+
+        if(educacaoSum > educacaoMax){
+            educacaoSum = educacaoMax;
+        }
+
+        if(saudeSum > saudeMax){
+            saudeSum = saudeMax;
+        }
+
+        return educacaoSum + saudeSum;
+    }
 }
