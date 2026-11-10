@@ -12,7 +12,39 @@ public final class DeclaracaoCompleta extends Declaracao{
 
     @Override
     public double valorImposto() {
-        return 0;
+        double tributavelCopy = this.getGanhoTributavel();
+        double valorFaixa;
+        double valorEntre;
+        double imposto = 0;
+
+        if(tributavelCopy > 55976.16){
+            valorFaixa = (tributavelCopy - 55976.16) * 0.275;
+            imposto += valorFaixa;
+            tributavelCopy -= valorFaixa;
+        }
+
+        if(tributavelCopy > 45012.73){
+            valorEntre = 55976.16 - tributavelCopy;
+            valorFaixa = valorEntre * 0.225;
+            imposto += valorFaixa;
+            tributavelCopy -= valorFaixa;
+        }
+
+        if(tributavelCopy > 33919.93){
+            valorEntre = 45012.73 - tributavelCopy;
+            valorFaixa = valorEntre * 0.15;
+            imposto += valorFaixa;
+            tributavelCopy -= valorFaixa;
+        }
+
+        if(tributavelCopy > 22847.88){
+            valorEntre = 33919.93 - tributavelCopy;
+            valorFaixa = valorEntre * 0.075;
+            imposto += valorFaixa;
+            tributavelCopy -= valorFaixa;
+        }
+
+        return imposto;
     }
 
     public void adicionarDespesa(Despesa despesa){
