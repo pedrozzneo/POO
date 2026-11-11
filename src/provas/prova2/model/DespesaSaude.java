@@ -16,4 +16,11 @@ public final class DespesaSaude extends Despesa{
     public String getRegistroConselho() {
         return registroConselho;
     }
+
+    @Override
+    public String toString() {
+        return "DespesaSaude{" +
+                "registroConselho='" + registroConselho + '\'' +
+                '}';
+    }
 }
