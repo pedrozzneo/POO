@@ -36,18 +36,16 @@ public abstract sealed class Declaracao permits DeclaracaoSimplificada, Declarac
     }
 
     @Override
-    public boolean equals(Object object){
-        if(object == null || object.getClass() != this.getClass()){
+    public final boolean equals(Object object){
+        if(!(object instanceof Declaracao declaracao)){
             return false;
         }
-
-        Declaracao declaracao = (Declaracao) object;
 
         return (Double.compare(declaracao.getGanhoTributavel(), this.getGanhoTributavel()) == 0) && (Double.compare(declaracao.getValorJaPago(), this.getValorJaPago()) == 0);
     }
 
     @Override
-    public int hashCode(){
+    public final int hashCode(){
         return Objects.hash(ganhoTributavel, valorJaPago);
     }
 

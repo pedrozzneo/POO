@@ -33,11 +33,10 @@ public abstract sealed class Despesa permits DespesaSaude, DespesaEducacao {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj.getClass() != this.getClass()){
+        if(!(obj instanceof Despesa despesa)){
             return false;
         }
 
-        Despesa despesa = (Despesa) obj;
         return Double.compare(this.getValor(), despesa.getValor()) == 0;
     }
 
