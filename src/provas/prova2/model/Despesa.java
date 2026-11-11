@@ -1,6 +1,6 @@
 package provas.prova2.model;
 
-public sealed class Despesa permits DespesaSaude, DespesaEducacao {
+public abstract sealed class Despesa permits DespesaSaude, DespesaEducacao {
     private int id;
     private String descricao;
     private double valor;
