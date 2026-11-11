@@ -84,6 +84,6 @@ public final class DeclaracaoCompleta extends Declaracao{
             saudeSum = saudeMax;
         }
 
-        this.setValorJaPago(this.getValorJaPago() + educacaoSum + saudeSum);
+        return (this.getValorJaPago() + educacaoSum + saudeSum);
     }
 }
