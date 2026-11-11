@@ -12,4 +12,9 @@ public final class DeclaracaoSimplificada extends Declaracao{
         }
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return "DeclaracaoSimplificada{" + super.toString() + "}";
+    }
 }

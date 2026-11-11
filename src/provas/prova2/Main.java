@@ -31,5 +31,10 @@ public class Main {
         // Remove despesas
         declaracaoCompleta.removerDespesa(despesaEducacao);
         declaracaoCompleta.removerDespesa(despesaSaude);
+
+        System.out.println(despesaEducacao.toString());
+        System.out.println(despesaSaude2.toString());
+        System.out.println(declaracaoCompleta.toString());
+        System.out.println(declaracaoSimplificada.toString());
     }
 }

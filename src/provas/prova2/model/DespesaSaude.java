@@ -20,7 +20,7 @@ public final class DespesaSaude extends Despesa{
     @Override
     public String toString() {
         return "DespesaSaude{" +
-                "registroConselho='" + registroConselho + '\'' +
-                '}';
+                "registroConselho='" + registroConselho + '\''
+                + "," + super.toString() + '}';
     }
 }

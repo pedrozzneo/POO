@@ -86,4 +86,12 @@ public final class DeclaracaoCompleta extends Declaracao{
 
         return (this.getValorJaPago() + educacaoSum + saudeSum);
     }
+
+    @Override
+    public String toString() {
+        return "DeclaracaoCompleta{" +
+                super.toString() +
+                ", despesas=" + despesas +
+                 + '}';
+    }
 }

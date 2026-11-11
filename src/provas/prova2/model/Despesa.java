@@ -44,4 +44,12 @@ public abstract sealed class Despesa permits DespesaSaude, DespesaEducacao {
     public int hashCode(){
         return Objects.hash(id, valor);
     }
+
+    @Override
+    public String toString() {
+        return  " id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                ", cnpj='" + cnpj + '\'';
+    }
 }

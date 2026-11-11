@@ -20,7 +20,7 @@ public final class DespesaEducacao extends Despesa{
     @Override
     public String toString() {
         return "DespesaEducacao{" +
-                "nomeInstituicao='" + nomeInstituicao + '\'' +
-                '}';
+                "nomeInstituicao='" + nomeInstituicao + '\''
+                 + "," + super.toString() + '}';
     }
 }
