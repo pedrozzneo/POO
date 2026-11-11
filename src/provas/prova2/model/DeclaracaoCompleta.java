@@ -43,7 +43,7 @@ public final class DeclaracaoCompleta extends Declaracao{
             imposto += valorFaixa;
         }
 
-        return imposto;
+        return imposto - totalDespesasDedutiveis();
     }
 
     public void adicionarDespesa(Despesa despesa){
@@ -54,7 +54,7 @@ public final class DeclaracaoCompleta extends Declaracao{
         despesas.remove(despesa);
     }
 
-    public void incluirDespesasDedutiveis(){
+    public double totalDespesasDedutiveis(){
        Despesa[] despesasArray = new Despesa[despesas.size()];
        despesasArray = despesas.toArray(despesasArray);
 
