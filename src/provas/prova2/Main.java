@@ -32,9 +32,24 @@ public class Main {
         declaracaoCompleta.removerDespesa(despesaEducacao);
         declaracaoCompleta.removerDespesa(despesaSaude);
 
+        // testa o method tostring
         System.out.println(despesaEducacao.toString());
         System.out.println(despesaSaude2.toString());
         System.out.println(declaracaoCompleta.toString());
         System.out.println(declaracaoSimplificada.toString());
+
+        // cria despesas
+        DespesaEducacao despesaEducacaoTest = new DespesaEducacao(3, "educacao 3", 1000, "3120314122", "eu");
+        DespesaSaude despesaSaudeTest = new DespesaSaude(4, "saude 4", 1000, "35431215", "31231");
+
+        // testa equals
+        boolean valor = despesaEducacaoTest.equals(despesaSaudeTest);
+        valor = despesaEducacaoTest.equals(declaracaoCompleta);
+        valor = despesaEducacaoTest.equals(despesaSaude3);
+
+        // testa hashcode
+        int hashCode = despesaEducacaoTest.hashCode();
+        int hashCode2 = despesaSaudeTest.hashCode();
+        hashCode2 = despesaSaude3.hashCode();
     }
 }
