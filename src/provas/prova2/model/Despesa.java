@@ -1,5 +1,7 @@
 package provas.prova2.model;
 
+import java.util.Objects;
+
 public abstract sealed class Despesa permits DespesaSaude, DespesaEducacao {
     private int id;
     private String descricao;
@@ -27,5 +29,29 @@ public abstract sealed class Despesa permits DespesaSaude, DespesaEducacao {
 
     public String getCnpj() {
         return cnpj;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(!(obj instanceof Despesa)){
+            return false;
+        }
+
+        return this.getValor() == ((Despesa) obj).getValor();
+    }
+
+    @Override
+    public String toString() {
+        return "Despesa{" +
+                "id=" + id +
+                ", descricao='" + descricao + '\'' +
+                ", valor=" + valor +
+                ", cnpj='" + cnpj + '\'' +
+                '}';
+    }
+
+    @Override
+    public int hashCode(){
+        return Objects.hash(id, valor);
     }
 }
