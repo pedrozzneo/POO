@@ -11,7 +11,7 @@ public final class DeclaracaoCompleta extends Declaracao{
     }
 
     @Override
-    public double valorImposto() {
+    protected double valorImposto() {
         double tributavelCopy = this.getGanhoTributavel();
         double valorFaixa;
         double valorEntre;

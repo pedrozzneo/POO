@@ -27,8 +27,6 @@ public class Main {
         // Verifica o valor das dedutíveis (apenas debugando)
         declaracaoCompleta.incluirDespesasDedutiveis();
 
-        declaracaoCompleta.valorImposto();
-
         // Remove despesas
         declaracaoCompleta.removerDespesa(despesaEducacao);
         declaracaoCompleta.removerDespesa(despesaSaude);

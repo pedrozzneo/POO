@@ -9,7 +9,7 @@ public abstract sealed class Declaracao permits DeclaracaoSimplificada, Declarac
         return valorImposto() - valorJaPago;
     }
 
-    public abstract double valorImposto();
+    protected abstract double valorImposto();
 
     public Declaracao(int id, double ganhoTributavel, double valorJaPago) {
         this.id = id;
