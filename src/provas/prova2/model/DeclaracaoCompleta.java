@@ -55,26 +55,11 @@ public final class DeclaracaoCompleta extends Declaracao{
     }
 
     public double totalDespesasDedutiveis(){
-       Despesa[] despesasArray = new Despesa[despesas.size()];
-       despesasArray = despesas.toArray(despesasArray);
+        double educacaoMax = DespesaEducacao.getDEDUCAO_MAX();
+        double saudeMax = DespesaSaude.getDEDUCAO_MAX();
 
-       double educacaoSum = 0;
-       double educacaoMax = DespesaEducacao.getDEDUCAO_MAX();
-
-       double saudeSum = 0;
-       double saudeMax = DespesaSaude.getDEDUCAO_MAX();
-
-        for (Despesa despesa : despesasArray) {
-            if(despesa instanceof DespesaEducacao){
-                educacaoSum += despesa.getValor();
-            }
-        }
-
-        for (Despesa despesa : despesasArray) {
-            if(despesa instanceof DespesaSaude){
-                saudeSum += despesa.getValor();
-            }
-        }
+        double educacaoSum = despesas.stream().filter(d -> d instanceof DespesaEducacao).mapToDouble(Despesa::getValor).sum();
+        double saudeSum = despesas.stream().filter(d -> d instanceof DespesaSaude).mapToDouble(Despesa::getValor).sum();
 
         if(educacaoSum > educacaoMax){
             educacaoSum = educacaoMax;
