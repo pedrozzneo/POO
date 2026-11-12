@@ -53,6 +53,7 @@ public abstract sealed class Declaracao permits DeclaracaoSimplificada, Declarac
     public String toString() {
         return "id=" + id +
                 ", ganhoTributavel=" + ganhoTributavel +
-                ", valorJaPago=" + valorJaPago;
+                ", valorJaPago=" + valorJaPago +
+                ", valor a pagar: " + valorAPagar();
     }
 }
