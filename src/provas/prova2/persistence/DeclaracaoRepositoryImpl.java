@@ -2,9 +2,7 @@ package provas.prova2.persistence;
 
 import provas.prova2.model.Declaracao;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 public class DeclaracaoRepositoryImpl implements DeclaracaoRepository{
     Map<Integer, Declaracao> repository = new HashMap<>();
@@ -41,9 +39,5 @@ public class DeclaracaoRepositoryImpl implements DeclaracaoRepository{
         }
 
         return Optional.of(repository.get(id));
-    }
-
-    public int size(){
-        return repository.size();
     }
 }
