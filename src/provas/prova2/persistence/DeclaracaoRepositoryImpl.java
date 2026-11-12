@@ -42,4 +42,8 @@ public class DeclaracaoRepositoryImpl implements DeclaracaoRepository{
 
         return Optional.of(repository.get(id));
     }
+
+    public int size(){
+        return repository.size();
+    }
 }
