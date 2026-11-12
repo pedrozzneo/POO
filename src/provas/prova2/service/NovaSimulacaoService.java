@@ -1,5 +1,6 @@
 package provas.prova2.service;
 
+import provas.prova2.exception.EntityAlreadyExistsException;
 import provas.prova2.model.DeclaracaoCompleta;
 import provas.prova2.model.DeclaracaoSimplificada;
 import provas.prova2.persistence.DeclaracaoRepositoryImpl;
@@ -13,8 +14,7 @@ public class NovaSimulacaoService {
 
     public void iniciar(double ganhoTributavel, double valorJaPago){
         if(repository.buscar(1).isPresent()){
-            System.out.println("já tem simulação vigente");
-            return;
+            throw new EntityAlreadyExistsException("bruh, there is another simulation going on");
         }
 
         DeclaracaoCompleta declaracaoCompleta = new DeclaracaoCompleta(1, ganhoTributavel, valorJaPago);

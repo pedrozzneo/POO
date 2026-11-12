@@ -1,5 +1,6 @@
 package provas.prova2;
 
+import provas.prova2.exception.EntityAlreadyExistsException;
 import provas.prova2.model.*;
 import provas.prova2.persistence.DeclaracaoRepositoryImpl;
 import provas.prova2.service.AdicionarDespesaService;
@@ -52,6 +53,13 @@ public class Main {
         AdicionarDespesaService adicionarDespesaService = new AdicionarDespesaService(declaracaoRepository);
 
         novaSimulacaoService.iniciar(1000, 2000);
+
+        try{
+            novaSimulacaoService.iniciar(1000, 2000);
+        } catch (EntityAlreadyExistsException e){
+            System.out.println(e);
+        }
+
         adicionarDespesaService.adicionar(despesaEducacao);
         adicionarDespesaService.adicionar(despesaEducacao2);
         adicionarDespesaService.adicionar(despesaEducacao3);
@@ -60,6 +68,6 @@ public class Main {
         adicionarDespesaService.adicionar(despesaSaude3);
 
 
-        novaSimulacaoService.iniciar(1000, 2000);
+
     }
 }
