@@ -17,8 +17,7 @@ public class AdicionarDespesaService {
 
     public void adicionar(Despesa despesa){
         if(repository.buscar(1).isEmpty()){
-            System.out.println("illegal bro");
-            return;
+            throw new IllegalStateException("there is nowhere to add that :/");
         }
 
         DeclaracaoCompleta declaracaoCompleta = (DeclaracaoCompleta) repository.buscar(1).get();
