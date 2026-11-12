@@ -6,6 +6,7 @@ import provas.prova2.persistence.DeclaracaoRepositoryImpl;
 import provas.prova2.service.AdicionarDespesaService;
 import provas.prova2.service.ExcluirSimulacaoService;
 import provas.prova2.service.NovaSimulacaoService;
+import provas.prova2.service.RelatorioSimulacaoService;
 
 public class Main {
     static void main() throws Exception {
@@ -53,6 +54,7 @@ public class Main {
         NovaSimulacaoService novaSimulacaoService = new NovaSimulacaoService(declaracaoRepository);
         AdicionarDespesaService adicionarDespesaService = new AdicionarDespesaService(declaracaoRepository);
         ExcluirSimulacaoService excluirSimulacaoService = new ExcluirSimulacaoService(declaracaoRepository);
+        RelatorioSimulacaoService relatorioSimulacaoService = new RelatorioSimulacaoService(declaracaoRepository);
 
         novaSimulacaoService.iniciar(1000, 2000);
         excluirSimulacaoService.excluir();
@@ -70,7 +72,7 @@ public class Main {
         adicionarDespesaService.adicionar(despesaSaude2);
         adicionarDespesaService.adicionar(despesaSaude3);
 
-
+        System.out.println(relatorioSimulacaoService.criarRelatorio());
 
     }
 }
