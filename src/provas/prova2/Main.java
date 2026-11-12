@@ -4,6 +4,7 @@ import provas.prova2.exception.EntityAlreadyExistsException;
 import provas.prova2.model.*;
 import provas.prova2.persistence.DeclaracaoRepositoryImpl;
 import provas.prova2.service.AdicionarDespesaService;
+import provas.prova2.service.ExcluirSimulacaoService;
 import provas.prova2.service.NovaSimulacaoService;
 
 public class Main {
@@ -51,8 +52,10 @@ public class Main {
         DeclaracaoRepositoryImpl declaracaoRepository = new DeclaracaoRepositoryImpl();
         NovaSimulacaoService novaSimulacaoService = new NovaSimulacaoService(declaracaoRepository);
         AdicionarDespesaService adicionarDespesaService = new AdicionarDespesaService(declaracaoRepository);
+        ExcluirSimulacaoService excluirSimulacaoService = new ExcluirSimulacaoService(declaracaoRepository);
 
         novaSimulacaoService.iniciar(1000, 2000);
+        excluirSimulacaoService.excluir();
 
         try{
             novaSimulacaoService.iniciar(1000, 2000);
