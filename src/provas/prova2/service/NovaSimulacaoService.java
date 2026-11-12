@@ -13,7 +13,7 @@ public class NovaSimulacaoService {
     }
 
     public void iniciar(double ganhoTributavel, double valorJaPago){
-        if(repository.buscar(1).isPresent()){
+        if(repository.buscar(1).isPresent() || repository.buscar(2).isPresent()){
             throw new EntityAlreadyExistsException("bruh, there is another simulation going on");
         }
 

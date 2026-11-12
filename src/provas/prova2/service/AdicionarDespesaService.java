@@ -16,7 +16,7 @@ public class AdicionarDespesaService {
     }
 
     public void adicionar(Despesa despesa){
-        if(repository.buscar(1).isEmpty()){
+        if(repository.buscar(1).isEmpty() || repository.buscar(2).isEmpty()){
             throw new IllegalStateException("there is nowhere to add that :/");
         }
 

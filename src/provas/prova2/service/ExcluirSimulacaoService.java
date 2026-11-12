@@ -12,7 +12,7 @@ public class ExcluirSimulacaoService {
     }
 
     public void excluir(){
-        if(repository.buscar(1).isEmpty()){
+        if(repository.buscar(1).isEmpty() || repository.buscar(2).isEmpty()){
             throw new NoSuchElementException("there is nothing to delete");
         }
 
