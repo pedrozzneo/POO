@@ -12,39 +12,29 @@ public final class DeclaracaoCompleta extends Declaracao{
 
     @Override
     protected double valorImposto() {
-        double tributavelCopy = this.getGanhoTributavel();
-        double valorFaixa;
-        double valorEntre;
+        double ganhoLiquido = this.getGanhoTributavel() - totalDespesasDedutiveis();
         double imposto = 0;
 
-        if(tributavelCopy > 55976.16){
-            valorFaixa = (tributavelCopy - 55976.16) * 0.275;
-            imposto += valorFaixa;
-            tributavelCopy = 55976.16;
+        if(ganhoLiquido > 55976.16){
+            imposto += (ganhoLiquido - 55976.16) * 0.275;
+            ganhoLiquido = 55976.16;
         }
 
-        if(tributavelCopy > 45012.73){
-            valorEntre = tributavelCopy - 45012.73;
-            valorFaixa = valorEntre * 0.225;
-            imposto += valorFaixa;
-            tributavelCopy = 45012.72;
+        if(ganhoLiquido > 45012.73){
+            imposto += (ganhoLiquido - 45012.73) * 0.225;
+            ganhoLiquido = 45012.73;
         }
 
-        if(tributavelCopy > 33919.93){
-            valorEntre = tributavelCopy - 33919.93;
-            valorFaixa = valorEntre * 0.15;
-            imposto += valorFaixa;
-            tributavelCopy = 33919.92;
+        if(ganhoLiquido > 33919.93){
+            imposto += (ganhoLiquido - 33919.93) * 0.15;
+            ganhoLiquido = 33919.93;
         }
 
-        if(tributavelCopy > 22847.88){
-            valorEntre = tributavelCopy - 22847.88;
-            valorFaixa = valorEntre * 0.075;
-            imposto += valorFaixa;
+        if(ganhoLiquido > 22847.88){
+            imposto += (ganhoLiquido - 22847.88) * 0.075;
         }
 
-        // sei que é gambiarra, mostrar pro lucas
-        return imposto - totalDespesasDedutiveis();
+        return imposto;
     }
 
     public void adicionarDespesa(Despesa despesa){
