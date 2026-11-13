@@ -21,6 +21,6 @@ public class RelatorioSimulacaoService {
 
         DeclaracaoSimplificada declaracaoSimplificada = (DeclaracaoSimplificada) repository.buscar(2).get();
 
-        return declaracaoCompleta.toString() + declaracaoSimplificada.toString();
+        return declaracaoCompleta + declaracaoSimplificada.toString();
     }
 }

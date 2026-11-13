@@ -2,6 +2,10 @@ package provas.prova2.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static provas.prova2.model.DespesaEducacao.DEDUCAO_MAX_EDUCACAO;
+import static provas.prova2.model.DespesaSaude.DEDUCAO_MAX_SAUDE;
 
 public final class DeclaracaoCompleta extends Declaracao{
     private final List<Despesa> despesas = new ArrayList<>();
@@ -46,28 +50,24 @@ public final class DeclaracaoCompleta extends Declaracao{
     }
 
     public double totalDespesasDedutiveis(){
-        double educacaoMax = DespesaEducacao.getDEDUCAO_MAX();
-        double saudeMax = DespesaSaude.getDEDUCAO_MAX();
+        double educacaoSum = despesas.stream()
+                .filter(d -> d instanceof DespesaEducacao)
+                .mapToDouble(Despesa::getValor)
+                .sum();
 
-        double educacaoSum = despesas.stream().filter(d -> d instanceof DespesaEducacao).mapToDouble(Despesa::getValor).sum();
-        double saudeSum = despesas.stream().filter(d -> d instanceof DespesaSaude).mapToDouble(Despesa::getValor).sum();
+        double saudeSum = despesas.stream()
+                .filter(d -> d instanceof DespesaSaude)
+                .mapToDouble(Despesa::getValor)
+                .sum();
 
-        if(educacaoSum > educacaoMax){
-            educacaoSum = educacaoMax;
-        }
-
-        if(saudeSum > saudeMax){
-            saudeSum = saudeMax;
-        }
-
-        return (this.getValorJaPago() + educacaoSum + saudeSum);
+        return Math.min(DEDUCAO_MAX_EDUCACAO, educacaoSum) + Math.min(DEDUCAO_MAX_SAUDE, saudeSum);
     }
 
     @Override
     public String toString() {
         return "DeclaracaoCompleta{" +
                 super.toString() +
-                ", despesas=" + despesas +
+                ", despesas= " + despesas.stream().map(Despesa::toString).collect(Collectors.joining("\n"))
                  + '}';
     }
 }
