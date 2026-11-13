@@ -43,6 +43,7 @@ public final class DeclaracaoCompleta extends Declaracao{
             imposto += valorFaixa;
         }
 
+        // sei que é gambiarra, mostrar pro lucas
         return imposto - totalDespesasDedutiveis();
     }
 
