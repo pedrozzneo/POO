@@ -5,7 +5,7 @@ import provas.prova2.model.Declaracao;
 import java.util.*;
 
 public class DeclaracaoRepositoryImpl implements DeclaracaoRepository{
-    Map<Integer, Declaracao> repository = new HashMap<>();
+    private final Map<Integer, Declaracao> repository = new LinkedHashMap<>();
 
     @Override
     public void salvar(Declaracao declaracao) {
@@ -14,30 +14,16 @@ public class DeclaracaoRepositoryImpl implements DeclaracaoRepository{
 
     @Override
     public boolean atualizar(Declaracao declaracao) {
-        if(!(repository.containsKey(declaracao.getId()))){
-            return false;
-        }
-
-        repository.replace(declaracao.getId(), declaracao);
-        return true;
+        return repository.replace(declaracao.getId(), declaracao) != null;
     }
 
     @Override
     public boolean remover(int id) {
-        if(!(repository.containsKey(id))){
-            return false;
-        }
-
-        repository.remove(id);
-        return true;
+        return repository.remove(id) != null;
     }
 
     @Override
     public Optional<Declaracao> buscar(int id) {
-        if(!(repository.containsKey(id))){
-            return Optional.empty();
-        }
-
-        return Optional.of(repository.get(id));
+        return Optional.ofNullable(repository.get(id));
     }
 }
