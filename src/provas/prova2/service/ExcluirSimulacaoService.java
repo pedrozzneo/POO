@@ -1,13 +1,14 @@
 package provas.prova2.service;
 
+import provas.prova2.persistence.DeclaracaoRepository;
 import provas.prova2.persistence.DeclaracaoRepositoryImpl;
 
 import java.util.NoSuchElementException;
 
 public class ExcluirSimulacaoService {
-    DeclaracaoRepositoryImpl repository;
+    private final DeclaracaoRepository repository;
 
-    public ExcluirSimulacaoService(DeclaracaoRepositoryImpl repository) {
+    public ExcluirSimulacaoService(DeclaracaoRepository repository) {
         this.repository = repository;
     }
 

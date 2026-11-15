@@ -3,12 +3,13 @@ package provas.prova2.service;
 import provas.prova2.exception.EntityAlreadyExistsException;
 import provas.prova2.model.DeclaracaoCompleta;
 import provas.prova2.model.DeclaracaoSimplificada;
+import provas.prova2.persistence.DeclaracaoRepository;
 import provas.prova2.persistence.DeclaracaoRepositoryImpl;
 
 public class NovaSimulacaoService {
-    DeclaracaoRepositoryImpl repository;
+    private final DeclaracaoRepository repository;
 
-    public NovaSimulacaoService(DeclaracaoRepositoryImpl repository){
+    public NovaSimulacaoService(DeclaracaoRepository repository){
         this.repository = repository;
     }
 
